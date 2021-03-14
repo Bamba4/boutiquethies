@@ -3,9 +3,10 @@ import db from "./core/db";
 import bodyParser from "body-parser";
 import cors from 'cors';
 import {Request, Response} from "express";
+require('dotenv').config();
 
 import CommandeRouter from './routes/commandeUrls';
-const port = 9090;
+const port = process.env.PORT || 9090;
 
 db;
 
