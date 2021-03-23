@@ -30,7 +30,7 @@ export const CommandeService = {
 
     getAllCommande: async (req: Request, resp: Response) => {
         console.log('getting all commandes.');
-        await Commande.find({}).sort({'deliveredAt': '-1'}).exec((err, commandes) => {
+        await Commande.find({}).sort({}).exec((err, commandes) => {
             if (err) console.log(err);
             else resp.send(commandes)
         })
@@ -38,7 +38,7 @@ export const CommandeService = {
 
     getCommandeByDate: async (req: Request, resp: Response) => {
         console.log('commande by id');
-        await Commande.find({'$or':[{'deliveredAt': req.params.date+'T00:00:00.000Z'}, {'updateAt': req.params.date+'T00:00:00.000Z'}]}).sort({'deliveredAt': '-1'}).exec((err, commandes) => {
+        await Commande.find({'$or':[{'deliveredAt': req.params.date+'T00:00:00.000Z'}, {'updateAt': req.params.date+'T00:00:00.000Z'}]}).sort({'deliveredAt': '1'}).exec((err, commandes) => {
             if (err) console.log(err);
             else resp.send(commandes)
         })

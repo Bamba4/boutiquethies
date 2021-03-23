@@ -41,7 +41,7 @@ exports.CommandeService = {
     }),
     getAllCommande: (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
         console.log('getting all commandes.');
-        yield commande_1.default.find({}).sort({ 'deliveredAt': '-1' }).exec((err, commandes) => {
+        yield commande_1.default.find({}).sort({}).exec((err, commandes) => {
             if (err)
                 console.log(err);
             else
@@ -50,7 +50,7 @@ exports.CommandeService = {
     }),
     getCommandeByDate: (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
         console.log('commande by id');
-        yield commande_1.default.find({ '$or': [{ 'deliveredAt': req.params.date + 'T00:00:00.000Z' }, { 'updateAt': req.params.date + 'T00:00:00.000Z' }] }).sort({ 'deliveredAt': '-1' }).exec((err, commandes) => {
+        yield commande_1.default.find({ '$or': [{ 'deliveredAt': req.params.date + 'T00:00:00.000Z' }, { 'updateAt': req.params.date + 'T00:00:00.000Z' }] }).sort({ 'deliveredAt': '1' }).exec((err, commandes) => {
             if (err)
                 console.log(err);
             else

@@ -4,19 +4,14 @@ const CommandeSchema = new mongoose.Schema<any>({
     designation: {
         type: String
     },
-    quantite: {
-        type: Number
-    },
     retour: Number,
     sortie: Number,
     deliveredAt: {
         type: Date,
-        default: new Date(Date.now()).toDateString()
+        default: Date.now()
     },
-    updateAt: {
-        type: Date,
-        default: new Date(Date.now()).toDateString()
-    }
+    stockCourant: Number,
+
 });
 
 const Commande = mongoose.model("Commande", CommandeSchema);
