@@ -8,7 +8,7 @@ const InitialStockSchema = new mongoose_1.default.Schema({
     stockInitial: Number,
     deliveredAt: {
         type: Date,
-        default: new Date(Date.now()).toDateString()
+        default: Date.now()
     }
 });
 const InitialStock = mongoose_1.default.model("InitialStock", InitialStockSchema);
