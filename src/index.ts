@@ -7,6 +7,7 @@ require('dotenv').config();
 
 import CommandeRouter from './routes/commandeUrls';
 import InitialStockRouter from './routes/initialStockUrls';
+import CommandeInitialRouter from './routes/commandeInitialUrls';
 const port = process.env.PORT || 9090;
 
 db;
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(CommandeRouter)
 app.use(InitialStockRouter)
+app.use(CommandeInitialRouter)
 
 app.listen(port, (err: any) => {
     if (err) {
