@@ -5,7 +5,7 @@ export const CommandeService = {
     createCommande: async (req: Request, resp: Response) => {
         console.log('cree un nouveau commande');
         const commandeToCreate = new Commande(req.body);
-        console.log({commandeToCreate});
+        console.log("kfkfkjf", {commandeToCreate});
         await commandeToCreate.save((err: any) => {
             if (err) resp.status(400).send(err);
             resp.send(commandeToCreate)
