@@ -10,7 +10,6 @@ const options = {
     useNewUrlParser: true
 };
 const uri = process.env.MONGODB_URL;
-console.log({ uri });
 // @ts-ignore
 const db = mongoose_1.default.connect(uri, options).
     then(() => {
